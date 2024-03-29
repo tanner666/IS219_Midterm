@@ -26,11 +26,13 @@ class HistoryCommand(Command):
             'subtract': '-',
             'divide': '/',
             'multiply': '*',
-            'log': 'log'
         }
         # get history
         history = Calculations.get_history()
 
         # print calculations
         for calculation in history:
-            print(f"{calculation[1]} {sign_mapping[calculation[0]]} {calculation[2]} = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}")
+            if (calculation[0] == 'log'):
+                print(f"{calculation[0]} {calculation[1]} ({calculation[2]}) = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}")
+            else:
+                print(f"{calculation[1]} {sign_mapping[calculation[0]]} {calculation[2]} = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}")

@@ -69,7 +69,7 @@ class Calculator:
 
     def start(self):
         self.load_commands()
-        logging.info("Application started. Type 'exit' to exit.")
+        logging.info("Application started. Type 'exit' to exit. Type 'menu' for list of commands.")
         try:
             while True:
                 command_input = input(">>> ").strip().split(' ')
