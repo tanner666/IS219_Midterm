@@ -1,0 +1,4 @@
+[run]
+omit =
+    /usr/lib/python*/dist-packages/*
+    /usr/local/lib/python*/dist-packages/*
