@@ -44,6 +44,19 @@ class Calculations:
             return history.values.tolist()[0]
         except FileNotFoundError:
             logging.error("No history found.")
+
+    @classmethod
+    def remove_latest(cls):
+        """Remove the most recently added calculation or return None"""
+        try:
+            history = pd.read_csv('./calculator/history.csv')
+            history = history.iloc[:-1, :]
+            with open('./calculator/history.csv', 'w', newline='') as f:
+                history.to_csv(f, header=f.tell()==0, index=False)
+        except FileNotFoundError:
+            logging.error("No history found.")
+        except Exception as e:
+            logging.error("Exception: {e}")
     
     @classmethod
     def find_by_operation(cls, operation_name: str) -> List[Calculation]:
