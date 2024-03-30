@@ -148,6 +148,14 @@ Env variables are stored in .env file (not uploaded to github), and are used to 
 
 Despite not utilizing them here, the Calculator class includes robust methods for dynamically loading and retrieving environment variables at the start of the program, in case they would ever be used in the future. These methods are located in the calculator/__init__.py file
 
+    def load_environment_variables(self):
+        settings = {key: value for key, value in os.environ.items()}
+        logging.info("Environment variables loaded.")
+        return settings
+
+    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
+        return self.settings.get(env_var, None)
+
 ## Logging
 
 Established a comprehensive logging system, throughout the entirety of the project, to record current states of the program:
