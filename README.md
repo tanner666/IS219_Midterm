@@ -18,8 +18,13 @@ Env variables are stored in .env file (not uploaded to github), and are used to 
 
 Despite not utilizing them here, the Calculator class includes robust methods for dynamically loading and retrieving environment variables at the start of the program, in case they would ever be used in the future. These methods are located in the calculator/__init__.py file
 
+## Logging
 
-
+Established a comprehensive logging system, throughout the entirety of the project, to record current states of the program:
+- **Note, usually this isn't uploaded to github, but for the sake of the midterm demo, I have uploaded the log file under the /logs folder
+- info logs are recored whenever a change occurs within the program (app starting, commands registering, app exiting, etc)
+- warning logs are recorded whenever a non fatal mistake occurs, like the user trying to divide by zero, or code not working as expected
+- error logs are recorded whenever a fatal problem occurs, such as a plugin or crucial file not being found
 
 ### Command-Line Interface (REPL)
 
