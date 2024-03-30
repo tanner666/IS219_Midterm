@@ -1,4 +1,26 @@
 # IS219_Midterm
+
+## Documentation
+
+## Design Patterns
+
+### Facade Pattern
+
+### Command Pattern
+
+### Factory Method
+
+### REPL
+
+## Environment Variables
+
+Env variables are stored in .env file (not uploaded to github), and are used to enhance the configurability, security, and usability of a program. They are often used to configure local environments, set modes, set usernames/passwords, and store api keys. In this project, the path to the csv file could be set as an environment variable and used within the program, so that it is easily configurable. However, I just hardcoded the path for the sake of this project. 
+
+Despite not utilizing them here, the Calculator class includes robust methods for dynamically loading and retrieving environment variables at the start of the program, in case they would ever be used in the future. These methods are located in the calculator/__init__.py file
+
+
+
+
 ### Command-Line Interface (REPL)
 
 Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator. 
