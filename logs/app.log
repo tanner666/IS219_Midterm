@@ -3363,3 +3363,68 @@
 2024-03-29 20:46:14,680 - root - WARNING - Cannot divide by zero!
 2024-03-29 20:46:14,728 - root - WARNING - Logarithm undefined for zero or negative numbers
 2024-03-29 20:46:14,744 - root - WARNING - Logarithm undefined for base <= 1
+2024-03-29 21:47:41,923 - root - INFO - Logging configured.
+2024-03-29 21:47:41,923 - root - INFO - Environment variables loaded.
+2024-03-29 21:47:41,923 - root - INFO - Command 'add' from plugin 'add' registered.
+2024-03-29 21:47:41,923 - root - INFO - Command 'clear_history' from plugin 'clear_history' registered.
+2024-03-29 21:47:41,923 - root - INFO - Command 'divide' from plugin 'divide' registered.
+2024-03-29 21:47:41,923 - root - INFO - Command 'history' from plugin 'history' registered.
+2024-03-29 21:47:41,923 - root - INFO - Command 'log' from plugin 'log' registered.
+2024-03-29 21:47:41,935 - root - INFO - Command 'menu' from plugin 'menu' registered.
+2024-03-29 21:47:41,936 - root - INFO - Command 'multiply' from plugin 'multiply' registered.
+2024-03-29 21:47:41,937 - root - INFO - Command 'subtract' from plugin 'subtract' registered.
+2024-03-29 21:47:41,940 - root - INFO - Command 'undo' from plugin 'undo' registered.
+2024-03-29 21:47:41,940 - root - INFO - Application started. Type 'exit' to exit. Type 'menu' for list of commands.
+2024-03-29 21:47:50,875 - root - INFO - Application interrupted and exiting gracefully.
+2024-03-29 21:47:50,876 - root - INFO - Application shutdown.
+2024-03-29 21:48:00,610 - root - INFO - Logging configured.
+2024-03-29 21:48:00,621 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,644 - root - INFO - Logging configured.
+2024-03-29 21:48:00,655 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,668 - root - INFO - Logging configured.
+2024-03-29 21:48:00,678 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,710 - root - INFO - Command 'add' from plugin 'add' registered.
+2024-03-29 21:48:00,718 - root - INFO - Command 'clear_history' from plugin 'clear_history' registered.
+2024-03-29 21:48:00,724 - root - INFO - Command 'divide' from plugin 'divide' registered.
+2024-03-29 21:48:00,731 - root - INFO - Command 'history' from plugin 'history' registered.
+2024-03-29 21:48:00,738 - root - INFO - Command 'log' from plugin 'log' registered.
+2024-03-29 21:48:00,744 - root - INFO - Command 'menu' from plugin 'menu' registered.
+2024-03-29 21:48:00,754 - root - INFO - Command 'multiply' from plugin 'multiply' registered.
+2024-03-29 21:48:00,764 - root - INFO - Command 'subtract' from plugin 'subtract' registered.
+2024-03-29 21:48:00,775 - root - INFO - Command 'undo' from plugin 'undo' registered.
+2024-03-29 21:48:00,776 - root - INFO - Application started. Type 'exit' to exit. Type 'menu' for list of commands.
+2024-03-29 21:48:00,778 - root - INFO - Application shutdown.
+2024-03-29 21:48:00,792 - root - INFO - Logging configured.
+2024-03-29 21:48:00,807 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,825 - root - INFO - Logging configured.
+2024-03-29 21:48:00,839 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,868 - root - INFO - Command 'add' from plugin 'add' registered.
+2024-03-29 21:48:00,879 - root - INFO - Command 'clear_history' from plugin 'clear_history' registered.
+2024-03-29 21:48:00,889 - root - INFO - Command 'divide' from plugin 'divide' registered.
+2024-03-29 21:48:00,896 - root - INFO - Command 'history' from plugin 'history' registered.
+2024-03-29 21:48:00,900 - root - INFO - Command 'log' from plugin 'log' registered.
+2024-03-29 21:48:00,903 - root - INFO - Command 'menu' from plugin 'menu' registered.
+2024-03-29 21:48:00,906 - root - INFO - Command 'multiply' from plugin 'multiply' registered.
+2024-03-29 21:48:00,910 - root - INFO - Command 'subtract' from plugin 'subtract' registered.
+2024-03-29 21:48:00,913 - root - INFO - Command 'undo' from plugin 'undo' registered.
+2024-03-29 21:48:00,914 - root - INFO - Application started. Type 'exit' to exit. Type 'menu' for list of commands.
+2024-03-29 21:48:00,915 - root - INFO - Application shutdown.
+2024-03-29 21:48:00,921 - root - INFO - Logging configured.
+2024-03-29 21:48:00,925 - root - INFO - Environment variables loaded.
+2024-03-29 21:48:00,945 - root - INFO - Command 'add' from plugin 'add' registered.
+2024-03-29 21:48:00,955 - root - INFO - Command 'clear_history' from plugin 'clear_history' registered.
+2024-03-29 21:48:00,965 - root - INFO - Command 'divide' from plugin 'divide' registered.
+2024-03-29 21:48:00,975 - root - INFO - Command 'history' from plugin 'history' registered.
+2024-03-29 21:48:00,984 - root - INFO - Command 'log' from plugin 'log' registered.
+2024-03-29 21:48:00,994 - root - INFO - Command 'menu' from plugin 'menu' registered.
+2024-03-29 21:48:01,003 - root - INFO - Command 'multiply' from plugin 'multiply' registered.
+2024-03-29 21:48:01,013 - root - INFO - Command 'subtract' from plugin 'subtract' registered.
+2024-03-29 21:48:01,022 - root - INFO - Command 'undo' from plugin 'undo' registered.
+2024-03-29 21:48:01,024 - root - INFO - Application started. Type 'exit' to exit. Type 'menu' for list of commands.
+2024-03-29 21:48:01,025 - root - INFO - Application shutdown.
+2024-03-29 21:48:01,040 - root - INFO - History cleared.
+2024-03-29 21:48:01,079 - root - INFO - History cleared.
+2024-03-29 21:48:01,149 - root - INFO - History cleared.
+2024-03-29 21:48:01,256 - root - WARNING - Cannot divide by zero
+2024-03-29 21:48:01,285 - root - WARNING - Logarithm undefined for zero or negative numbers
+2024-03-29 21:48:01,294 - root - WARNING - Logarithm undefined for base <= 1
