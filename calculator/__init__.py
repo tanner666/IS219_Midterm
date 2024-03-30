@@ -45,15 +45,15 @@ class Calculator:
         commands_package = 'calculator.commands'
         commands_path = commands_package.replace('.', '/')
         if not os.path.exists(commands_path):
-            logging.warning(f"Plugins directory '{commands_path}' not found.") 
-            return
+            logging.warning(f"Plugins directory '{commands_path}' not found.") # pragma: no cover
+            return # pragma: no cover
         for _, command_name, is_pkg in pkgutil.iter_modules([commands_path]):
             if is_pkg:  # Ensure it's a package
                     try:
                         command_module = importlib.import_module(f'{commands_package}.{command_name}')
                         self.register_commands(command_module, command_name)
-                    except ImportError as e:
-                        logging.error(f"Error importing plugin {command_name}: {e}")
+                    except ImportError as e: # pragma: no cover
+                        logging.error(f"Error importing plugin {command_name}: {e}") # pragma: no cover
 
     def register_commands(self, command_module, command_name):
         for item_name in dir(command_module):

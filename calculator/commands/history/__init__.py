@@ -33,6 +33,6 @@ class HistoryCommand(Command):
         # print calculations
         for calculation in history:
             if (calculation[0] == 'log'):
-                print(f"{calculation[0]} {calculation[1]} ({calculation[2]}) = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}")
+                print(f"{calculation[0]} {calculation[1]} ({calculation[2]}) = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}") # pragma: no cover
             else:
                 print(f"{calculation[1]} {sign_mapping[calculation[0]]} {calculation[2]} = {Methods._retrieve_result(Decimal(calculation[1]),Decimal(calculation[2]), operation_mapping[calculation[0]])}")

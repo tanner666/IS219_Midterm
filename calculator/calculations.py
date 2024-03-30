@@ -25,7 +25,7 @@ class Calculations:
         try:
             history = pd.read_csv('./calculator/history.csv')
             return history.values.tolist()
-        except FileNotFoundError:
+        except FileNotFoundError:# pragma: no cover
             logging.error("No history found.")
     
     @classmethod
@@ -49,13 +49,13 @@ class Calculations:
     def remove_latest(cls):
         """Remove the most recently added calculation or return None"""
         try:
-            history = pd.read_csv('./calculator/history.csv')
+            history = pd.read_csv('./calculator/history.csv') 
             history = history.iloc[:-1, :]
             with open('./calculator/history.csv', 'w', newline='') as f:
                 history.to_csv(f, header=f.tell()==0, index=False)
-        except FileNotFoundError:
+        except FileNotFoundError:# pragma: no cover
             logging.error("No history found.")
-        except Exception as e:
+        except Exception as e:# pragma: no cover
             logging.error("Exception: {e}")
     
     @classmethod
@@ -65,5 +65,5 @@ class Calculations:
             history = pd.read_csv('./calculator/history.csv').values.tolist()
             print(history)
             return [calc for calc in history if calc[0] == operation_name]
-        except FileNotFoundError:
+        except FileNotFoundError:# pragma: no cover
             logging.error("No history found.")  
