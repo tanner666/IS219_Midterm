@@ -15,7 +15,7 @@ You must have git and Python installed to run this.
 
 ## Design Patterns
 
-## Strategy Pattern
+### Strategy Pattern
 
 This pattern revolves around encapsulating algorithms/strategies in separate classes/functions, to make them interchangeable with a context object. The main way I implemented this was through the 'operation' parameter that is passed to the Calculation class, allowing any one of five different operations to be passed all in a single call. ex: 
 
@@ -25,6 +25,22 @@ This pattern revolves around encapsulating algorithms/strategies in separate cla
             self.a = a
             self.b = b
             self.operation = operation #function
+
+### Singleton
+
+Singleton is a pattern in which a class is designed to operate without creating instances of itself, to ensure all interactions with it are centralized through a single access point. My calculations.py class uses this approach, since all of the methods are class methods which manipulate the shared resource of the history.csv file.
+
+    def __new__(cls):
+        raise NotImplementedError("This class cannot be instantiated")
+
+    @classmethod
+    def add_calculation(cls, calculation: Calculation):
+        """Add a new calculation to the calculator history file"""
+       ...
+       
+    @classmethod
+    def get_history(cls) -> List[List[str]]:
+
 
 ### Facade Pattern
 
