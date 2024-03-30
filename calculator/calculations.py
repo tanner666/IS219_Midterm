@@ -8,6 +8,10 @@ from calculator.calculation import Calculation
 
 class Calculations:
 
+    # Prevent the creation of instances
+    def __new__(cls):
+        raise NotImplementedError("This class cannot be instantiated")
+
     #self is for instances, cls is for classes
     @classmethod
     def add_calculation(cls, calculation: Calculation):
