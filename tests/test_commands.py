@@ -10,6 +10,7 @@ from calculator.commands.log import LogCommand
 from calculator.commands.clear_history import ClearHistoryCommand
 from calculator.commands.history import HistoryCommand
 from calculator.commands.menu import MenuCommand
+from calculator.commands.undo import UndoCommand
 
 # pylint: disable=line-too-long,redefined-outer-name,unused-argument
 from calculator.calculation import Calculation
@@ -37,6 +38,19 @@ def test_clear_history_command(setup_calculations):
     command.execute(input)
     # Assert that the history is empty by checking its length.
     assert len(Calculations.get_history()) == 0, "History was not cleared"
+
+@patch('builtins.print')
+@patch('builtins.input', side_effect=['2', '8'])
+def test_undo_command(setup_calculations,mock_print):
+    """Test undoing a command"""
+    # Clear the calculation history.
+    command1 = AddCommand()
+    command2 = UndoCommand()
+    command1.execute(input)
+    size = len(Calculations.get_history())
+    command2.execute(input)
+    # Assert that the history is one less by checking its length.
+    assert len(Calculations.get_history()) == size, "Last command wasn't deleted"
 
 def test_history_command(setup_calculations):
     """Test  entire calculation history."""

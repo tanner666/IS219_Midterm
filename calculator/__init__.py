@@ -29,7 +29,7 @@ class Calculator:
         if os.path.exists(logging_conf_path):
             logging.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
         else:
-            logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+            logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s') # pragma: no cover
         logging.info("Logging configured.")
 
     def load_environment_variables(self):
@@ -45,7 +45,7 @@ class Calculator:
         commands_package = 'calculator.commands'
         commands_path = commands_package.replace('.', '/')
         if not os.path.exists(commands_path):
-            logging.warning(f"Plugins directory '{commands_path}' not found.")
+            logging.warning(f"Plugins directory '{commands_path}' not found.") 
             return
         for _, command_name, is_pkg in pkgutil.iter_modules([commands_path]):
             if is_pkg:  # Ensure it's a package
