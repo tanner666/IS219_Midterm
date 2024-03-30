@@ -1,5 +1,8 @@
 # IS219_Midterm
 
+## Link to Video Demo:
+[Demo Video](https://youtu.be/ENCo4s-fEqg)
+
 ## Documentation
 
 ## Design Patterns
