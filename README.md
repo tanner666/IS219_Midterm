@@ -46,6 +46,28 @@ Singleton is a pattern in which a class is designed to operate without creating 
 
 ### Command Pattern
 
+This pattern encapsulates all information needed to perform an action (like method call, parameters, obecjects, etc) in commands. It also uses a CommandHandler to call the Commands to process requests. ex from my calculator and commands __init__ files: 
+
+    class Command(ABC):
+    @abstractmethod
+    def execute(self):
+        pass  # pragma: no cover
+
+    class CommandHandler:
+        def __init__(self):
+            self.commands = {}
+
+        def register_command(self, command_name: str, command: Command):
+            self.commands[command_name] = command
+    
+        def execute_command(self, command_name: str, args):
+            """ Look before you leap (LBYL) - Use when its less likely to work
+            if command_name in self.commands:
+                self.commands[command_name].execute()
+            else:
+                print(f"No such command: {command_name}")
+            """
+            ...
 ### Factory Method
 
 This pattern provides an interface for creating objects or generating data, while allowing the type of objects created to be altered. This is most apparent in my conftest.py file, where I use the Faker library to create a substantial amount of fake data to test my calculator on: 
