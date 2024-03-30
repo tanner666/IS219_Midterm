@@ -44,6 +44,58 @@ Singleton is a pattern in which a class is designed to operate without creating 
 
 ### Facade Pattern
 
+The Facade pattern provides a unified/simplified interface (or facade class) that hides the complexities of the underlying classes/frameworks. The main way I implemented this was by having my main.py file act as a simple entry point into the program, which then called the more complex methods and REPL loop hidden in the Calculation class. ex: 
+
+main.py
+
+    from calculator import Calculator    
+    
+    if __name__ == "__main__":
+        calculator = Calculator().start()  # Instantiate an instance of App
+
+Calculator
+
+    class Calculator:
+
+        def __init__(self): # Constructor
+            os.makedirs('logs', exist_ok=True)
+            self.configure_logging()
+            load_dotenv()
+            self.settings = self.load_environment_variables()
+            self.settings.setdefault('ENVIRONMENT', 'PRODUCTION')
+            self.command_handler = CommandHandler()
+
+    def configure_logging(self):
+        ...
+
+    def load_environment_variables(self):
+       ...
+
+    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
+        ...
+    
+    def load_commands(self):
+        ...
+
+    def register_commands(self, command_module, command_name):
+        ...
+
+    def execute_command_in_process(self, command_name, args):
+        ...
+
+    def start(self):
+        ...
+        try:
+            while True:
+                command_input = input(">>> ").strip().split(' ')
+                command_name = command_input[0]
+                args = command_input[1:]
+                if command_input[0].lower() == 'exit':
+                    break
+                # Create a Process for each command execution
+        ...
+
+
 ### Command Pattern
 
 This pattern encapsulates all information needed to perform an action (like method call, parameters, obecjects, etc) in commands. It also uses a CommandHandler to call the Commands to process requests. ex from my calculator and commands __init__ files: 
@@ -68,6 +120,7 @@ This pattern encapsulates all information needed to perform an action (like meth
                 print(f"No such command: {command_name}")
             """
             ...
+            
 ### Factory Method
 
 This pattern provides an interface for creating objects or generating data, while allowing the type of objects created to be altered. This is most apparent in my conftest.py file, where I use the Faker library to create a substantial amount of fake data to test my calculator on: 
@@ -83,6 +136,11 @@ This pattern provides an interface for creating objects or generating data, whil
         performing the operations on the fake data ...
 
 ### REPL
+
+Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator. 
+- main.py is entry point and calls Calculator().start()
+- this start command loads all plugins and starts a loop
+- the loop keeps running and accepting input until a keyboard interrupt or exit is entered
 
 ## Environment Variables
 
@@ -117,14 +175,6 @@ The Look Before You Leap is a more careful approach, used to look for potential 
 
 I also use both of these structures throughout the program, whenever I know that a potential issue could arise with the code that I need to check for. Try/Except are generally used in less costly areas, or when a specific issue might arise. LBYL is generally a safer approach, used in more costly situations where you can't continue if a condition fails.
           
-
-
-### Command-Line Interface (REPL)
-
-Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator. 
-- main.py is entry point and calls Calculator().start()
-- this start command loads all plugins and starts a loop
-- the loop keeps running and accepting input until a keyboard interrupt or exit is entered
 
 ### Plugin System
 
