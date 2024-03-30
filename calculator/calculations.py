@@ -59,10 +59,11 @@ class Calculations:
             logging.error("Exception: {e}")
     
     @classmethod
-    def find_by_operation(cls, operation_name: str) -> List[Calculation]:
+    def find_by_operation(cls, operation_name: str) -> List[List[str]]:
         """Find and return a list of calculations by operation name"""
         try:
-            history = pd.read_csv('./calculator/history.csv')['Calculations'].tolist()
-            return [calc for calc in history if calc.operation.__name__ == operation_name]
+            history = pd.read_csv('./calculator/history.csv').values.tolist()
+            print(history)
+            return [calc for calc in history if calc[0] == operation_name]
         except FileNotFoundError:
             logging.error("No history found.")  

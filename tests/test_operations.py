@@ -25,10 +25,9 @@ def test_operation_divide():
     assert calculation.perform_two_operands() == Decimal('2'), "Divide operation failed"
 
 def test_divide_by_zero():
-    '''Testing the divide by zero exception'''
-    with pytest.raises(ZeroDivisionError, match="Cannot divide by zero"):
-        calculation = Calculation(Decimal('10'), divide, Decimal('0'),)
-        calculation.perform_two_operands()
+    """Test division by zero."""
+    result = Calculation(Decimal('10'), divide, Decimal('0')).perform_two_operands()
+    assert result is None, "Division by zero should return None."
 
 def test_operation_log_one():
     '''Testing the log operation'''
@@ -42,12 +41,10 @@ def test_operation_log_two():
 
 def test_invalid_logarithm_one():
     '''Testing the <= 0 logarithm exception'''
-    with pytest.raises(ValueError, match="Logarithm undefined for zero or negative numbers"):
-        calculation = Calculation(Decimal('-10'), log)
-        calculation.perform_one_operand()
+    result = Calculation(Decimal('-10'), log).perform_one_operand()
+    assert result is None, "Logarithm on negative number should return None"
 
 def test_invalid_logarithm_two():
     '''Testing the <= 0 logarithm exception'''
-    with pytest.raises(ValueError, match="Logarithm undefined for base <= 1"):
-        calculation = Calculation(Decimal('10'), log, Decimal('-4'),)
-        calculation.perform_two_operands()
+    result = Calculation(Decimal('10'), log, Decimal('-4')).perform_two_operands()
+    assert result is None, "Logarithm on negative number should return None"

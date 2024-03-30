@@ -43,7 +43,7 @@ def test_history_command(setup_calculations):
     command = HistoryCommand()
     command.execute(input)
     # Assert that the history is empty by checking its length.
-    assert len(Calculations.history) == 2, "History does not contain the expected number of calculations"
+    assert len(Calculations.get_history()) == 2, "History does not contain the expected number of calculations"
 
 @pytest.fixture
 def menu_command():
