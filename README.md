@@ -8,18 +8,41 @@ You must have git and Python installed to run this.
 
 ### How to test it out
 
-- navigate to local directory you want to run project in and run: git clone <repository-url>
-- install dependencies with: pip install -r requirements.txt
-- run the code: python main.py   (or python3 main.py)
+- navigate to local directory you want to run project in and run: $git clone <repository-url>
+- install dependencies with: $pip install -r requirements.txt
+- run the code: $python main.py   (or python3 main.py)
 - type 'menu' to see a full list of commands you can execute
 
 ## Design Patterns
+
+## Strategy Pattern
+
+This pattern revolves around encapsulating algorithms/strategies in separate classes/functions, to make them interchangeable with a context object. The main way I implemented this was through the 'operation' parameter that is passed to the Calculation class, allowing any one of five different operations to be passed all in a single call. ex: 
+
+    class Calculation:
+        def __init__(self, a: Decimal, operation: Union[Callable[[Decimal], Decimal], Callable[[Decimal, Decimal], Decimal]], b: Optional[Decimal] = None):
+            """Constructor, with either one or two operands. b = None if nothing entered"""
+            self.a = a
+            self.b = b
+            self.operation = operation #function
 
 ### Facade Pattern
 
 ### Command Pattern
 
 ### Factory Method
+
+This pattern provides an interface for creating objects or generating data, while allowing the type of objects created to be altered. This is most apparent in my conftest.py file, where I use the Faker library to create a substantial amount of fake data to test my calculator on: 
+
+    for _ in range(num_records):
+        a = Decimal(fake.random_number(digits=2))
+        # use first Decimal() if _ % 4 != 3, else use second Decimal()
+        b = Decimal(fake.random_number(digits=2)) if _ % 4 != 3 else Decimal(fake.random_number(digits=1))
+        # Randomly obtain operation_name from map
+        operation_name = fake.random_element(elements=list(operation_mappings.keys()))
+        operation_func = operation_mappings[operation_name]
+        ...
+        performing the operations on the fake data ...
 
 ### REPL
 
