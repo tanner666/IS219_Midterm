@@ -1,9 +1,17 @@
 # IS219_Midterm
 
-## Link to Video Demo:
 [Demo Video](https://youtu.be/ENCo4s-fEqg)
 
 ## Documentation
+
+You must have git and Python installed to run this.
+
+### How to test it out
+
+- navigate to local directory you want to run project in and run: git clone <repository-url>
+- install dependencies with: pip install -r requirements.txt
+- run the code: python main.py   (or python3 main.py)
+- type 'menu' to see a full list of commands you can execute
 
 ## Design Patterns
 
