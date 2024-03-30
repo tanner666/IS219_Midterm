@@ -198,3 +198,5 @@ Utilized Pandas to manage a robust calculation history:
 - calculations are loaded into a pandas dataframe, stored in the csv file as strings (op, a, b), and reconverted back into calculations when the history is retrieved
 - data can also be manipulated, such as undoing last operation
 
+
+**Note that 90% of this code was copied over from my other repo that I used for the homeworks : [hw repo](https://github.com/tanner666/IS219-HW3)
